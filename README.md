@@ -10,6 +10,24 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 1. 
 ```
 
+## 👉 Necessary Commands
+
+Necessary Commands used in this project:
+
+```bash
+1. npx create-next-app@latest tile-canvas -> used to create this project
+2. npm run dev -> used to run the project on local host
+
+* Resourse Libraries:
+3. npm i @heroui/styles @heroui/react -> for components like button, cards etc.
+```
+
+## ✈️ Hosted JSON Server
+
+I already hosted a json server with a different project in Render Platform. I will fetch my data from that server.
+
+[tile-canvas-server Repository](https://github.com/arRahat129/tile-canvas-server) and the live server [tile-canvas-server](https://tile-canvas-server.onrender.com).
+
 ## 🛠️ Technologies to Use
 
 | Technology | Purpose |
