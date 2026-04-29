@@ -16,10 +16,15 @@ Necessary Commands used in this project:
 
 ```bash
 1. npx create-next-app@latest tile-canvas -> used to create this project
+
 2. npm run dev -> used to run the project on local host
 
 * Resourse Libraries:
 3. npm i @heroui/styles @heroui/react -> for components like button, cards etc.
+
+4. npm install react-icons --save -> for icons used in the project
+
+5. npm install react-fast-marquee --save -> To use the constant movable letters
 ```
 
 ## ✈️ Hosted JSON Server
