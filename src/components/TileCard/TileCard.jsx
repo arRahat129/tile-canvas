@@ -1,5 +1,6 @@
 import { Button, Card, Chip } from '@heroui/react';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 const TileCard = ({ tile }) => {
@@ -12,9 +13,9 @@ const TileCard = ({ tile }) => {
                     alt={tile.title}
                     className='object-cover rounded-xl'
                 />
-                <Chip className='absolute right-2 top-2' size='sm'>
+                <Chip className={`absolute right-2 top-2 rounded-full font-medium ${tile.inStock === true ? "bg-green-100 text-green-900" : "bg-red-100 text-red-900"}`} size='sm'>
                     {
-                        tile.inStock === true ? <span className='bg-green-100 py-1 px-2  rounded-full text-green-900 font-medium'>Available</span> : <span className='bg-red-100 py-1 px-2  rounded-full text-red-900 font-medium'>Not Available</span>}
+                        tile.inStock === true ? "Available" : "Not Available"}
                 </Chip>
             </div>
 
@@ -23,9 +24,11 @@ const TileCard = ({ tile }) => {
                 <p>Dimention: {tile.dimensions}</p>
 
                 <div>
-                    <Button variant='outline' className={'w-full'}>
-                        View Details
-                    </Button>
+                    <Link href={`/all-tiles/${tile.id}`}>
+                        <Button variant='outline' className={'w-full'}>
+                            View Details
+                        </Button>
+                    </Link>
                 </div>
             </div>
 
