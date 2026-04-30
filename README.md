@@ -35,6 +35,8 @@ Necessary Commands used in this project:
 9. npm i @gravity-ui/icons -> to use icons
 
 10. npm i react-toastify -> to use beautiful toast notifications
+
+11. npm i react-loader-spinner -> to show loading spinner
 ```
 
 ## ✈️ Hosted JSON Server
@@ -67,7 +69,7 @@ You can check out [the GitHub repository](Repo link) of the Author [Mohammad Ash
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out this project [**TileCanvas -- Choose Your Tile to meet the Dream House view**](project-link) for more details.
+Check out this project [**TileCanvas -- Choose Your Tile to meet the Dream House view**](https://tile-canvas.vercel.app) for more details.
 
 <br>
 <br>

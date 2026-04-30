@@ -1,7 +1,7 @@
 'use client'
 
 import { authClient } from '@/lib/auth-client';
-import { Avatar, Button } from '@heroui/react';
+import { Avatar, Button, Skeleton } from '@heroui/react';
 import Link from 'next/link';
 import React from 'react';
 
@@ -12,8 +12,26 @@ const Authentication = () => {
     const user = userData.data?.user;
     // console.log(user);
 
-    const handleSignOut = async() => {
+    const handleSignOut = async () => {
         await authClient.signOut();
+    }
+
+    const isPending = userData?.isPending;
+    if (isPending) {
+        return (
+            <div className="flex gap-4 justify-end items-center">
+                
+                <Skeleton className="w-8 h-8 rounded-full" />
+
+
+                <div className="flex flex-col gap-2">
+                    <Skeleton className="w-24 h-3 rounded-md" />
+                    <Skeleton className="w-32 h-3 rounded-md" />
+                </div>
+
+                <Skeleton className="w-20 h-8 rounded-md" />
+            </div>
+        );
     }
 
 
@@ -21,13 +39,13 @@ const Authentication = () => {
         <div className="flex gap-4 justify-end">
             {
                 !user && <ul className="flex items-center gap-5 text-sm">
-                        <Link href={"/signin"}>
-                            <Button>SignIn</Button>
-                        </Link>
+                    <Link href={"/signin"}>
+                        <Button>SignIn</Button>
+                    </Link>
 
-                        <Link href={"/signup"}>
-                            <Button>SignUp</Button>
-                        </Link>
+                    <Link href={"/signup"}>
+                        <Button>SignUp</Button>
+                    </Link>
                 </ul>
             }
 

@@ -30,7 +30,7 @@ export function UpdateUser() {
     }
     return (
         <Modal>
-            <Button variant="secondary"><BiEdit /> Update Profile</Button>
+            <Button variant="secondary" className={'my-5 w-full'}><BiEdit /> Update Profile</Button>
             <Modal.Backdrop>
                 <Modal.Container placement="auto">
                     <Modal.Dialog className="sm:max-w-md">
