@@ -2,8 +2,15 @@ import { Avatar, Button } from "@heroui/react";
 import Image from "next/image";
 import logoImg from "@/assets/logo.png"
 import Link from "next/link";
+import ActiveNav from "./ActiveNav";
 
 const Navbar = () => {
+
+    const navItems = [
+        { id: 1, name: "Home", path: "/" },
+        { id: 2, name: "All Tiles", path: "/all-tiles" },
+        { id: 3, name: "Profile", path: "/profile" }
+    ];
 
     return (
         <div className="border-b px-2">
@@ -19,17 +26,7 @@ const Navbar = () => {
                     />
                 </div>
 
-                <ul className="flex items-center justify-center gap-5 text-sm">
-                    <li>
-                        <Link href={"/"}>Home</Link>
-                    </li>
-                    <li>
-                        <Link href={"/all-tiles"}>All Tiles</Link>
-                    </li>
-                    <li>
-                        <Link href={"/profile"}>Profile</Link>
-                    </li>
-                </ul>
+                <ActiveNav navItems={navItems} />
 
                 <div className="flex gap-4 justify-end">
                     <Link href={'/signin'}>
