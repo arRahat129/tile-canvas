@@ -12,11 +12,12 @@ import {
     TextField,
 } from "@heroui/react";
 import { useRouter } from "next/navigation";
+import { GrGoogle } from "react-icons/gr";
 import { Bounce, toast } from "react-toastify";
 
 export default function SignUpPage() {
     const router = useRouter();
-    
+
     const onSubmit = async (e) => {
         e.preventDefault();
 
@@ -61,10 +62,21 @@ export default function SignUpPage() {
             });
         }
 
-        if(!error){
+        if (!error) {
             router.push('/');
         }
 
+    };
+
+    const handleGoogleSignIn = async () => {
+        try {
+            await authClient.signIn.social({
+                provider: "google",
+                callbackURL: "/" // redirect after login
+            });
+        } catch (error) {
+            toast.error("Google sign-in failed");
+        }
     };
 
     return (
@@ -138,6 +150,12 @@ export default function SignUpPage() {
                     </Button>
                 </div>
             </Form>
+
+            <p className="text-center">or</p>
+
+            <div>
+                <Button onClick={handleGoogleSignIn} className={'w-full'}><GrGoogle /> Sign Up with Google</Button>
+            </div>
         </Card>
     );
 }

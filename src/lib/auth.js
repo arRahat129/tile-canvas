@@ -12,32 +12,10 @@ export const auth = betterAuth({
     emailAndPassword: {
         enabled: true,
     },
+    socialProviders: {
+        google: {
+            clientId: process.env.GOOGLE_CLIENT_ID,
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+        }
+    }
 });
-
-// import { betterAuth } from "better-auth";
-// import { MongoClient } from "mongodb";
-// import { mongodbAdapter } from "better-auth/adapters/mongodb";
-
-// const uri = process.env.TILE_CANVAS_DB_URI;
-
-// let dbAdapter = undefined;
-
-// if (uri) {
-//     const client = new MongoClient(uri);
-//     const db = client.db("tile-canvas");
-
-//     dbAdapter = mongodbAdapter(db, { client });
-// }
-
-// export const auth = betterAuth({
-//     database: dbAdapter, // will be undefined if no URI
-//     emailAndPassword: {
-//         enabled: true,
-//     },
-//     socialProviders: {
-//         google: {
-//             clientId: process.env.GOOGLE_CLIENT_ID,
-//             clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-//         }
-//     }
-// });

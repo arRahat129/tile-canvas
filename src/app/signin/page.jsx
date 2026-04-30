@@ -58,11 +58,16 @@ export default function SignInPage() {
 
     };
 
-    const handleGoogleSignIn = async() => {
-        await authClient.signIn.social({
-            provider: 'google'
-        })
-    }
+    const handleGoogleSignIn = async () => {
+        try {
+            await authClient.signIn.social({
+                provider: "google",
+                callbackURL: "/" // redirect after login
+            });
+        } catch (error) {
+            toast.error("Google sign-in failed");
+        }
+    };
 
     return (
         <Card className="border mx-auto w-125 py-10 mt-5">
