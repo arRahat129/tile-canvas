@@ -25,6 +25,16 @@ Necessary Commands used in this project:
 4. npm install react-icons --save -> for icons used in the project
 
 5. npm install react-fast-marquee --save -> To use the constant movable letters
+
+6. npm install better-auth -> to use the authentication system and get session data
+
+7. npm install mongodb -> to install the MongoDB in the system
+
+8. npm install @better-auth/mongo-adapter -> need to use an adapter
+
+9. npm i @gravity-ui/icons -> to use icons
+
+10. npm i react-toastify -> to use beautiful toast notifications
 ```
 
 ## ✈️ Hosted JSON Server

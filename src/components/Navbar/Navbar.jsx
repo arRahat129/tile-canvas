@@ -1,8 +1,7 @@
-import { Avatar, Button } from "@heroui/react";
 import Image from "next/image";
 import logoImg from "@/assets/logo.png"
-import Link from "next/link";
 import ActiveNav from "./ActiveNav";
+import Authentication from "./Authentication";
 
 const Navbar = () => {
 
@@ -28,18 +27,7 @@ const Navbar = () => {
 
                 <ActiveNav navItems={navItems} />
 
-                <div className="flex gap-4 justify-end">
-                    <Link href={'/signin'}>
-                        <Button>
-                            Sign In
-                        </Button>
-                    </Link>
-                    <Link href={'/signup'}>
-                        <Button>
-                            Sign Up
-                        </Button>
-                    </Link>
-                </div>
+                <Authentication />
             </nav>
         </div>
     );
