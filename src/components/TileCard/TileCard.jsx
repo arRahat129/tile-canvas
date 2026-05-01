@@ -5,7 +5,7 @@ import React from 'react';
 
 const TileCard = ({ tile }) => {
     return (
-        <Card className="border rounded-xl h-full flex flex-col overflow-hidden">
+        <Card className="border rounded-xl h-full flex flex-col overflow-hidden transition duration-300 ease-in-out hover:scale-[1.03] hover:shadow-lg">
 
             <div className="relative w-full aspect-square">
                 <Image

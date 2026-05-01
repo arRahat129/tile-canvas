@@ -4,11 +4,8 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## 🔍 Project Description
 
+    TileCanvas is a modern tile gallery web application where users can explore, search, and visualize different tile designs for their dream home. The platform allows users to browse featured tiles, view detailed information, and manage their profile after authentication.
 
-
-```bash
-1. 
-```
 
 ## 👉 Necessary Commands
 
@@ -37,6 +34,8 @@ Necessary Commands used in this project:
 10. npm i react-toastify -> to use beautiful toast notifications
 
 11. npm i react-loader-spinner -> to show loading spinner
+
+12. npm install animate.css --save -> to add card animation and make a rise up motion
 ```
 
 ## ✈️ Hosted JSON Server
@@ -51,19 +50,24 @@ I already hosted a json server with a different project in Render Platform. I wi
 |---|---|
 | **Next.js** | Build the UI |
 | **App router(Next.js)** | Handle page navigation |
-| **Tailwind CSS+Any component library** | Styling and responsiveness |
+| **Tailwind CSS+ HeroUI component library** | Styling and responsiveness |
+| **Authentication** | BetterAuth (configured with MongoDB Adapter) |
 
 
 ## Key Features of this Project
 
-* 
-* 
-* 
-* 
-* 
+* Fully responsive modern UI using Tailwind CSS & HeroUI
+* Dynamic tile gallery with real-time data fetching
+* Authentication system using BetterAuth with MongoDB
+* Protected routes using middleware (proxy)
+* Search functionality for tiles
+* Interactive marquee showing latest updates
+* Profile management with update feature
+* Google social login integration
+* Toast notifications for user feedback 
 
 ## 📁 Repository of Author
-You can check out [the GitHub repository](Repo link) of the Author [Mohammad Ashikur Rahman](https://github.com/arRahat129) - your feedback and contributions are welcome!
+You can check out [tile-canvas-repository](https://github.com/arRahat129/tile-canvas) of the Author [Mohammad Ashikur Rahman](https://github.com/arRahat129) - your feedback and contributions are welcome!
 
 ## 🚀 Deploy on Vercel
 

@@ -1,6 +1,7 @@
 import { tilesDataFetch } from '@/lib/dataFetching';
 import React from 'react';
 import TileCard from '../TileCard/TileCard';
+import 'animate.css';
 
 const FeaturedTiles = async () => {
     const tiles = await tilesDataFetch();
@@ -22,9 +23,19 @@ const FeaturedTiles = async () => {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5">
-                {topTiles.map(tile => (
-                    <TileCard key={tile.id} tile={tile} />
-                ))}
+                {
+                    topTiles.map((tile, i) => (
+                        <div
+                            key={tile.id}
+                            className="animate__animated animate__fadeInUp"
+                            style={{
+                                animationDelay: `${Math.min(i * 0.5)}s`,
+                            }}
+                        >
+                            <TileCard tile={tile} />
+                        </div>
+                    ))
+                }
             </div>
         </div>
     );
