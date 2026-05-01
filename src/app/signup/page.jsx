@@ -13,11 +13,14 @@ import {
 } from "@heroui/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { FaEye, FaRegEyeSlash } from "react-icons/fa6";
 import { GrGoogle } from "react-icons/gr";
 import { Bounce, toast } from "react-toastify";
 
 export default function SignUpPage() {
     const router = useRouter();
+    const [showPassword, setShowPassword] = useState(false);
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -37,6 +40,8 @@ export default function SignUpPage() {
         });
 
         if (data) {
+            await authClient.signOut(); // I used this by the help of ai just to stop loading the session after signup. and wait till sign in. By this, after sign up user's session won't be started....
+
             toast.success(`Sign Up Successfully! Welcome ${data.user.name}`, {
                 position: "top-right",
                 autoClose: 5000,
@@ -118,7 +123,7 @@ export default function SignUpPage() {
                     isRequired
                     minLength={8}
                     name="password"
-                    type="password"
+                    type={showPassword ? "text" : "password"}
                     validate={(value) => {
                         if (value.length < 8) {
                             return "Password must be at least 8 characters";
@@ -134,7 +139,20 @@ export default function SignUpPage() {
                     }}
                 >
                     <Label>Password</Label>
-                    <Input placeholder="Enter your password" />
+                    <div className="relative w-full">
+                        <Input
+                            placeholder="Enter your password"
+                            className={'w-full'}
+                        />
+
+                        {/* 👁 Toggle Icon */}
+                        <span
+                            onClick={() => setShowPassword(!showPassword)}
+                            className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer text-gray-500"
+                        >
+                            {showPassword ? <FaRegEyeSlash /> : <FaEye />}
+                        </span>
+                    </div>
                     <Description>
                         Must be at least 8 characters with 1 uppercase and 1 number
                     </Description>
