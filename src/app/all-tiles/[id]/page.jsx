@@ -66,7 +66,7 @@ const TileDetailsPage = async ({ params }) => {
 
             <div className='grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-5'>
                 <Link href={'/all-tiles'} className='w-full'>
-                     <Button className={'bg-green-50 text-green-900 font-bold w-full'}>All Times</Button>   
+                     <Button className={'bg-green-50 text-green-900 font-bold w-full'}>All Tiles</Button>   
                 </Link>
 
                 <Link href={'/'} className='w-full'>
