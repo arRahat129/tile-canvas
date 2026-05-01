@@ -3,6 +3,7 @@
 import { authClient } from "@/lib/auth-client";
 import { Button, Input, Label, Modal, Surface, TextField } from "@heroui/react";
 import { BiEdit, BiUser } from "react-icons/bi";
+import 'animate.css';
 
 export function UpdateUser() {
     const onSubmit = async (e) => {
@@ -30,13 +31,13 @@ export function UpdateUser() {
     }
     return (
         <Modal>
-            <Button variant="secondary" className={'my-5 w-full'}><BiEdit /> Update Profile</Button>
+            <Button className={'my-5 w-full bg-blue-50 text-blue-950 hover:bg-green-100 hover:text-green-900 active:font-bold animate__animated hover:animate-pulse active:animate-ping'}><BiEdit /> Update Profile</Button>
             <Modal.Backdrop>
                 <Modal.Container placement="auto">
                     <Modal.Dialog className="sm:max-w-md">
                         <Modal.CloseTrigger />
                         <Modal.Header>
-                            <Modal.Icon className="bg-accent-soft text-accent-soft-foreground">
+                            <Modal.Icon className="bg-green-100 text-green-700">
                                 <BiUser className="size-5" />
                             </Modal.Icon>
                             <Modal.Heading>Update User</Modal.Heading>
@@ -54,10 +55,10 @@ export function UpdateUser() {
                                     </TextField>
 
                                     <Modal.Footer>
-                                        <Button slot="close" variant="secondary">
+                                        <Button slot="close" className={'bg-blue-50 text-blue-950 hover:bg-blue-200 hover:text-blue-900 active:font-bold'}>
                                             Cancel
                                         </Button>
-                                        <Button type="submit" slot="close">Save</Button>
+                                        <Button type="submit" slot="close" className={'bg-green-700 text-white hover:bg-green-200 hover:text-green-900 active:font-bold'}>Save</Button>
                                     </Modal.Footer>
                                 </form>
                             </Surface>

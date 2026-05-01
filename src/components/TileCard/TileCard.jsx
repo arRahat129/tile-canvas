@@ -2,6 +2,7 @@ import { Button, Card, Chip } from '@heroui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import 'animate.css';
 
 const TileCard = ({ tile }) => {
     return (
@@ -19,8 +20,8 @@ const TileCard = ({ tile }) => {
                 <Chip
                     size="sm"
                     className={`absolute right-2 top-2 rounded-full font-medium text-[10px] sm:text-xs md:text-sm ${tile.inStock
-                            ? "bg-green-100 text-green-900"
-                            : "bg-red-100 text-red-900"
+                        ? "bg-green-100 text-green-900 animate__animated animate__pulse animate__infinite"
+                        : "bg-red-100 text-red-900"
                         }`}
                 >
                     {tile.inStock ? "Available" : "Not Available"}
@@ -39,7 +40,7 @@ const TileCard = ({ tile }) => {
 
                 <div className="mt-auto">
                     <Link href={`/all-tiles/${tile.id}`}>
-                        <Button variant="outline" className="w-full text-xs sm:text-sm">
+                        <Button className="bg-white text-black border rounded-full w-full text-xs sm:text-sm hover:bg-green-50 hover:text-green-950 hover:font-semibold animate__animated active:animate-ping active:bg-green-900 active:text-white active:font-bold">
                             View Details
                         </Button>
                     </Link>

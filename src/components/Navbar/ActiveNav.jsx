@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import React from 'react';
 import { usePathname } from "next/navigation";
+import 'animate.css';
 
 const ActiveNav = ({ navItems }) => {
     const pathname = usePathname();
@@ -10,7 +11,7 @@ const ActiveNav = ({ navItems }) => {
     return (
         <ul className="flex items-center justify-center gap-5 text-sm md:w-auto">
             {navItems.map((item) => (
-                <li key={item.id}>
+                <li key={item.id} className='hover:animate-pulse'>
                     <Link
                         href={item.path}
                         className={`transition-all duration-100 font-semibold ${pathname === item.path

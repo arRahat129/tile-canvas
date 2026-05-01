@@ -12,7 +12,7 @@ const MarqueePage = async () => {
 
             <div className="flex items-center gap-3 sm:gap-4">
 
-                <Button className="bg-red-500 text-white text-xs sm:text-sm px-3 sm:px-4 py-1 sm:py-2 shrink-0">
+                <Button className="bg-red-500 text-white text-xs sm:text-sm px-3 sm:px-4 py-1 sm:py-2 shrink-0 animate__animated animate__pulse animate__infinite">
                     Product Updates
                 </Button>
 
