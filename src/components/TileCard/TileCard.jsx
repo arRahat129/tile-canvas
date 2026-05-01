@@ -5,33 +5,47 @@ import React from 'react';
 
 const TileCard = ({ tile }) => {
     return (
-        <Card className='border rounded-xl'>
-            <div className='relative w-full aspect-square'>
-                <Image src={tile.image}
+        <Card className="border rounded-xl h-full flex flex-col overflow-hidden">
+
+            <div className="relative w-full aspect-square">
+                <Image
+                    src={tile.image}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     alt={tile.title}
-                    className='object-cover rounded-xl'
+                    className="object-cover"
                 />
-                <Chip className={`absolute right-2 top-2 rounded-full font-medium ${tile.inStock === true ? "bg-green-100 text-green-900" : "bg-red-100 text-red-900"}`} size='sm'>
-                    {
-                        tile.inStock === true ? "Available" : "Not Available"}
+
+                <Chip
+                    size="sm"
+                    className={`absolute right-2 top-2 rounded-full font-medium text-[10px] sm:text-xs md:text-sm ${tile.inStock
+                            ? "bg-green-100 text-green-900"
+                            : "bg-red-100 text-red-900"
+                        }`}
+                >
+                    {tile.inStock ? "Available" : "Not Available"}
                 </Chip>
             </div>
 
-            <div className='space-y-3'>
-                <h2 className='font-medium'>{tile.title}</h2>
-                <p>Dimention: {tile.dimensions}</p>
+            <div className="p-3 sm:p-4 space-y-2 sm:space-y-3 flex flex-col flex-1">
 
-                <div>
+                <h2 className="font-semibold text-sm sm:text-base md:text-lg line-clamp-1">
+                    {tile.title}
+                </h2>
+
+                <p className="text-xs sm:text-sm text-gray-600">
+                    Dimension: {tile.dimensions}
+                </p>
+
+                <div className="mt-auto">
                     <Link href={`/all-tiles/${tile.id}`}>
-                        <Button variant='outline' className={'w-full'}>
+                        <Button variant="outline" className="w-full text-xs sm:text-sm">
                             View Details
                         </Button>
                     </Link>
                 </div>
-            </div>
 
+            </div>
 
         </Card>
     );

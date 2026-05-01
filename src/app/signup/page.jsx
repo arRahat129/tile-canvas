@@ -11,6 +11,7 @@ import {
     Label,
     TextField,
 } from "@heroui/react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { GrGoogle } from "react-icons/gr";
 import { Bounce, toast } from "react-toastify";
@@ -63,7 +64,7 @@ export default function SignUpPage() {
         }
 
         if (!error) {
-            router.push('/');
+            router.push('/signin');
         }
 
     };
@@ -80,10 +81,10 @@ export default function SignUpPage() {
     };
 
     return (
-        <Card className="border mx-auto w-125 py-10 mt-5">
-            <h1 className="text-center text-2xl font-bold">Sign Up</h1>
+        <Card className="border mx-auto w-full max-w-md py-6 sm:py-8 md:py-10 px-6 mt-5">
+            <h1 className="text-center text-xl sm:text-2xl font-bold">Sign Up</h1>
 
-            <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
+            <Form className="flex w-full mx-auto flex-col gap-4 mt-5" onSubmit={onSubmit}>
                 <TextField isRequired name="name" type="text">
                     <Label>Name</Label>
                     <Input placeholder="Enter your name" />
@@ -109,7 +110,7 @@ export default function SignUpPage() {
                     }}
                 >
                     <Label>Email</Label>
-                    <Input placeholder="john@example.com" />
+                    <Input placeholder="Enter your email" />
                     <FieldError />
                 </TextField>
 
@@ -140,18 +141,20 @@ export default function SignUpPage() {
                     <FieldError />
                 </TextField>
 
-                <div className="flex gap-2">
-                    <Button type="submit">
+                <div className="flex flex-col sm:flex-row gap-2">
+                    <Button type="submit" className={'w-full sm:w-auto'}>
                         <Check />
                         Sign Up
                     </Button>
-                    <Button type="reset" variant="secondary">
+                    <Button type="reset" variant="secondary" className={'w-full sm:w-auto'}>
                         Reset
                     </Button>
                 </div>
+
+                <p className="text-center pt-2 text-xs sm:text-sm md:text-md">Already have an ID! <Link className="text-blue-600 underline cursor-pointer" href={'/signin'}>Login Now!</Link></p>
             </Form>
 
-            <p className="text-center">or</p>
+            <p className="text-center my-3 text-sm sm:text-base">or</p>
 
             <div>
                 <Button onClick={handleGoogleSignIn} className={'w-full'}><GrGoogle /> Sign Up with Google</Button>

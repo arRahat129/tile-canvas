@@ -14,8 +14,10 @@ const Navbar = () => {
 
     return (
         <div className="border-b px-2">
-            <nav className="grid grid-cols-3 py-3 max-w-7xl mx-auto w-full">
-                <Link href={'/'} className="justify-start">
+            <nav className="max-w-7xl mx-auto w-full py-3
+    flex flex-col items-center gap-5 md:gap-0
+    md:flex-row md:justify-between md:items-center">
+                <Link href={'/'} className="flex justify-center md:justify-start">
                     <div className="flex gap-2 items-center">
                         <Image
                             src={logoImg}

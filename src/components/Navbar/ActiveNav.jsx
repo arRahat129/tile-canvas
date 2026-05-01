@@ -8,7 +8,7 @@ const ActiveNav = ({ navItems }) => {
     const pathname = usePathname();
 
     return (
-        <ul className="flex items-center justify-center gap-5 text-sm">
+        <ul className="flex items-center justify-center gap-5 text-sm md:w-auto">
             {navItems.map((item) => (
                 <li key={item.id}>
                     <Link

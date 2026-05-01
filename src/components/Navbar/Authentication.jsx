@@ -19,7 +19,7 @@ const Authentication = () => {
     const isPending = userData?.isPending;
     if (isPending) {
         return (
-            <div className="flex gap-4 justify-end items-center">
+            <div className="flex justify-center md:justify-end w-full md:w-auto scale-95">
                 
                 <Skeleton className="w-8 h-8 rounded-full" />
 
