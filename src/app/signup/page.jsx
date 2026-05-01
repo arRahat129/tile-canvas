@@ -22,6 +22,10 @@ export default function SignUpPage() {
     const router = useRouter();
     const [showPassword, setShowPassword] = useState(false);
 
+    useEffect(() => {
+        document.title = "Sign Up | Tile Canvas";
+    }, []);
+
     const onSubmit = async (e) => {
         e.preventDefault();
 

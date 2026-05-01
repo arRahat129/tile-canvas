@@ -13,12 +13,16 @@ import {
 } from "@heroui/react";
 import Link from "next/link";
 import { GrGoogle } from "react-icons/gr";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaEye, FaRegEyeSlash } from "react-icons/fa6";
 import { Bounce, toast } from "react-toastify";
 
 export default function SignInPage() {
     const [showPassword, setShowPassword] = useState(false);
+
+    useEffect(() => {
+        document.title = "Sign In | Tile Canvas";
+    }, []);
 
     const onSubmit = async (e) => {
         e.preventDefault();

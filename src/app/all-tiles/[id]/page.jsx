@@ -5,6 +5,27 @@ import Link from 'next/link';
 import React from 'react';
 import 'animate.css';
 
+export async function generateMetadata({ params }) {
+    const { id } = await params;
+
+    const tiles = await tilesDataFetch();
+    // console.log("tiles", tiles);
+    
+    const singleTile = tiles.find(tile => tile.id == id);
+    // console.log("singleTile", singleTile);
+
+    if (!singleTile) {
+        return {
+            title: "Tile Not Found | Tile Canvas",
+        };
+    }
+
+    return {
+        title: `${singleTile.title} | Tile Canvas`,
+        description: singleTile.description,
+    };
+}
+
 const TileDetailsPage = async ({ params }) => {
     const { id } = await params;
     // console.log(id);
@@ -34,9 +55,9 @@ const TileDetailsPage = async ({ params }) => {
                         alt={title}
                         className='object-cover rounded-xl'
                     />
-                    <Chip className={`absolute left-2 top-2 rounded-full font-medium text-xs sm:text-sm ${inStock === true 
-                        ? "bg-green-100 text-green-900 animate__animated animate__pulse animate__infinite" 
-                        : "bg-red-100 text-red-900"}`}  size='lg'>
+                    <Chip className={`absolute left-2 top-2 rounded-full font-medium text-xs sm:text-sm ${inStock === true
+                        ? "bg-green-100 text-green-900 animate__animated animate__pulse animate__infinite"
+                        : "bg-red-100 text-red-900"}`} size='lg'>
                         {
                             inStock === true ? "Available" : "Not Available"}
                     </Chip>
@@ -69,11 +90,11 @@ const TileDetailsPage = async ({ params }) => {
 
             <div className='grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-5'>
                 <Link href={'/all-tiles'} className='w-full'>
-                     <Button className={'bg-green-50 text-green-900 font-bold w-full hover:border hover:border-green-800 animate__animated hover:animate-pulse active:animate-bounce'}>All Tiles</Button>   
+                    <Button className={'bg-green-50 text-green-900 font-bold w-full hover:border hover:border-green-800 animate__animated hover:animate-pulse active:animate-bounce'}>All Tiles</Button>
                 </Link>
 
                 <Link href={'/'} className='w-full'>
-                     <Button className={'bg-blue-50 text-blue-900 font-bold w-full hover:border hover:border-blue-800 animate__animated hover:animate-pulse active:animate-bounce'}>Home</Button>   
+                    <Button className={'bg-blue-50 text-blue-900 font-bold w-full hover:border hover:border-blue-800 animate__animated hover:animate-pulse active:animate-bounce'}>Home</Button>
                 </Link>
             </div>
         </div>

@@ -3,10 +3,14 @@
 import { UpdateUser } from '@/components/UpdateUser/UpdateUser';
 import { authClient } from '@/lib/auth-client';
 import { Avatar, Card } from '@heroui/react';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const ProfilePage = () => {
     const userData = authClient.useSession();
+    
+    useEffect(() => {
+        document.title = "My Profile | Tile Canvas";
+    }, []);
 
     const user = userData.data?.user;
 
