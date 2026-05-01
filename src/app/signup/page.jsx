@@ -13,7 +13,7 @@ import {
 } from "@heroui/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaEye, FaRegEyeSlash } from "react-icons/fa6";
 import { GrGoogle } from "react-icons/gr";
 import { Bounce, toast } from "react-toastify";
